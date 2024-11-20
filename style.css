@@ -1,0 +1,65 @@
+body {
+    background-color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    width: 120px;
+    border-radius: 15%;
+    position: relative;
+    float: right;
+}
+
+#head{
+    background-color: #36c37f;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+canvas {
+    background-color: white;
+    border: 2px solid #4a4a4a;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#graphCanvas {
+    width: 800px;
+    height: 600px;
+}
+
+input, button {
+    background-color: white;
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+#mstDistance {
+    font-size: 24px;
+    color: green;
+    font-weight: bold;
+}

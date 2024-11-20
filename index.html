@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TangLat</title>
+
+</head>
+<body>
+    
+    <div id="head">
+    <img class="logo" src="logo/logo.png">
+    <h1>TangLat</h1>
+    <p>by Minimum Spanning Tree using Prim's algorithm</p>
+
+    </div>
+
+    <div id="controls">
+        <h3>Set Number of Vertices</h3>
+        <input type="number" id="vertexCountInput" placeholder="Number of Vertices">
+        <button onclick="generateVertices()">Generate Vertices</button>
+
+        <h3>Add Edges</h3>
+        <input type="number" id="fromInput" placeholder="From Vertex">
+        <input type="number" id="toInput" placeholder="To Vertex">
+        <input type="number" id="weightInput" placeholder="Weight (in meters)">
+        <button onclick="addEdge()">Add Edge with Distance</button>
+
+        <div>
+            <button onclick="calculateMST()">Calculate MST</button>
+            <button onclick="undo()">Undo</button>
+        </div>
+
+        <h3>Shortest Path (MST) Total Distance: <span id="mstDistance">0</span> meters</h3>
+    </div>
+
+    <canvas id="graphCanvas" width="800" height="600"></canvas>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
