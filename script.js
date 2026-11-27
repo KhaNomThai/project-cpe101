@@ -194,6 +194,7 @@ canvas.addEventListener('mousemove', dragVertex);
 
 // Prim's algorithm implementation
 function primMST() {
+    if (vertices.length === 0) return null;
     const mstEdges = [];
     const selected = Array(vertices.length).fill(false);
     const startingVertex = 0; // เริ่มจาก vertex แรก
@@ -216,6 +217,9 @@ function primMST() {
                 v = from;
             }
         });
+
+        // ถ้าหาเส้นต่อไม่ได้ จะไม่มี spanning tree ที่ครอบทุก vertex
+        if (v === -1) return null;
 
         mstEdges.push([u, v, minWeight]);
         totalDistance += minWeight; // เพิ่มระยะทางไปยังผลรวม
@@ -245,10 +249,17 @@ function drawMST(mstEdges) {
 }
 
 function calculateMST() {
-    const {
-        mstEdges,
-        totalDistance
-    } = primMST();
+    const result = primMST();
+    const status = document.getElementById('mstStatus');
+    if (!result) {
+        mstDistanceElement.textContent = '—';
+        status.textContent = vertices.length === 0
+            ? 'Generate vertices before calculating the tree.'
+            : 'Connect all vertices before calculating the tree.';
+        return;
+    }
+    const { mstEdges, totalDistance } = result;
+    status.textContent = '';
     drawMST(mstEdges);
     mstDistanceElement.textContent = totalDistance.toFixed(2); // แสดงผลระยะทางทั้งหมด
 }
